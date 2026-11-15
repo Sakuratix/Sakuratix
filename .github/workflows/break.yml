@@ -1,0 +1,50 @@
+name: break my cluster
+# A visitor opens an issue "break: <failure>" from the README; kubectl-why diagnoses it,
+# the bot replies, closes the issue and logs the incident in README.md.
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:   # dry run: diagnose and print the reply, change nothing
+    inputs:
+      title: { description: "issue title to simulate", default: "break: oomkilled" }
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency: { group: readme-writes, cancel-in-progress: false }
+
+jobs:
+  diagnose:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.issue.title, 'break:')
+    runs-on: ubuntu-latest
+    env:
+      # issue data reaches the script only through env, never through ${{ }} in run:
+      ISSUE_TITLE: ${{ github.event.issue.title || inputs.title }}
+      ISSUE_AUTHOR: ${{ github.event.issue.user.login || github.actor }}
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: { repository: Sakuratix/kubectl-why, path: kw }
+      - uses: actions/setup-go@v5
+        with: { go-version-file: kw/go.mod, cache-dependency-path: kw/go.mod }
+      - run: cd kw && go build -o kubectl-why ./cmd/kubectl-why
+      - run: python3 scripts/break_cluster.py --kubectl-why kw/kubectl-why --repo kw --comment "$RUNNER_TEMP/reply.md"
+      - name: dry run
+        if: github.event_name == 'workflow_dispatch'
+        run: cat "$RUNNER_TEMP/reply.md" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: reply and close
+        if: github.event_name == 'issues'
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/reply.md"
+          gh issue close "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --reason completed
+      - name: log it in the README
+        if: github.event_name == 'issues'
+        run: |
+          git add README.md data/breaks.json 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "break my cluster: incident #$(python3 -c 'import json;print(json.load(open("data/breaks.json"))["total"])')"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 3; done

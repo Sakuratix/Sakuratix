@@ -62,6 +62,32 @@
 
 <img src="assets/stack.svg" alt="containers: Kubernetes, Docker, Helm, Argo CD; delivery: GitLab CI, GitHub Actions, Trivy, cosign; iac: Terraform, Ansible, Yandex Cloud; observability: Prometheus, Grafana, Loki, Zabbix; systems: Linux, Nginx, MikroTik, WireGuard; data: PostgreSQL, Redis, Kafka; code: Bash, Python, Go" width="100%">
 
+## Break my cluster
+
+Pick a failure. It opens an issue; press **Create** and within a minute a bot replays that failure on a recorded cluster, runs the real [kubectl-why](https://github.com/Sakuratix/kubectl-why) on it and answers you in the issue.
+
+<p>
+<!-- break-menu:start -->
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+oomkilled&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-OOMKilled-ff7b72?style=flat-square&labelColor=161b22" alt="OOMKilled"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+crashloop&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-CrashLoopBackOff-ff7b72?style=flat-square&labelColor=161b22" alt="CrashLoopBackOff"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+liveness&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-Liveness_probe_kill-ff7b72?style=flat-square&labelColor=161b22" alt="Liveness probe kill"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+readiness&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-Readiness_failing-ff7b72?style=flat-square&labelColor=161b22" alt="Readiness failing"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+bad-image&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-ImagePullBackOff-ff7b72?style=flat-square&labelColor=161b22" alt="ImagePullBackOff"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+private-registry&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-Private_registry-ff7b72?style=flat-square&labelColor=161b22" alt="Private registry"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+missing-secret&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-Missing_Secret-ff7b72?style=flat-square&labelColor=161b22" alt="Missing Secret"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+pending&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-Pending_forever-ff7b72?style=flat-square&labelColor=161b22" alt="Pending forever"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+volume&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-Volume_won%27t_mount-ff7b72?style=flat-square&labelColor=161b22" alt="Volume won't mount"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+stuck-terminating&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-Stuck_Terminating-ff7b72?style=flat-square&labelColor=161b22" alt="Stuck Terminating"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+evicted&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-Evicted-ff7b72?style=flat-square&labelColor=161b22" alt="Evicted"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+init&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-Init_container_fails-ff7b72?style=flat-square&labelColor=161b22" alt="Init container fails"></a>
+<a href="https://github.com/Sakuratix/Sakuratix/issues/new?title=break:+rollout&body=Just+press+%22Create%22.+A+bot+will+diagnose+your+incident+within+a+minute+and+close+this+issue."><img src="https://img.shields.io/badge/%F0%9F%92%A5-Stuck_rollout-ff7b72?style=flat-square&labelColor=161b22" alt="Stuck rollout"></a>
+<!-- break-menu:end -->
+</p>
+
+<!-- break-log:start -->
+**Broken 0 times so far.**
+<!-- break-log:end -->
+
 ## Incident of the day
 
 <!-- incident:start -->

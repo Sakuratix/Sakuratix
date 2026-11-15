@@ -11,7 +11,7 @@ on:
 permissions:
   contents: write
 
-concurrency: { group: update-profile, cancel-in-progress: false }
+concurrency: { group: readme-writes, cancel-in-progress: false }
 
 jobs:
   update:
@@ -32,4 +32,4 @@ jobs:
           git diff --cached --quiet && { echo "nothing changed"; exit 0; }
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
             commit -m "profile: daily refresh"
-          git push
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 3; done
