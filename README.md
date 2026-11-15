@@ -13,6 +13,7 @@
 
 <p align="center"><sub>CKA · Terraform Associate · MTCNA · English C1</sub></p>
 <!-- stats:start -->
+<p align="center"><sub>Joined GitHub this year · 16 contributions in the last 7 days</sub></p>
 <!-- stats:end -->
 
 ## Built
@@ -64,7 +65,11 @@
 ## Incident of the day
 
 <!-- incident:start -->
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it.
+**Incident of the day, 15 November 2026:** Stuck creating: a volume can't be mounted
+
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: A ReadWriteOnce volume is still attached to another node (often the old pod during a rollout). Use strategy Recreate or wait for the old pod to go.
+
+<img src="assets/incident.svg" alt="kubectl why output: Stuck creating: a volume can't be mounted" width="100%">
 <!-- incident:end -->
 
 <p align="center"><sub>Updated daily by <a href=".github/workflows/update.yml">a GitHub Action</a> · <a href="https://sakuratox.is-a.dev">sakuratox.is-a.dev</a> · <a href="https://t.me/MountewDew">Telegram</a> · sakuratoxs@gmail.com</sub></p>
