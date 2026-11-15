@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 378" width="900" height="378">
+<defs><pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#8ef0c6" stroke-opacity=".06"/></pattern></defs>
+<rect width="900" height="378" rx="10" fill="#0d1117"/><rect width="900" height="378" rx="10" fill="url(#g)"/>
+<rect x=".5" y=".5" width="899" height="377" rx="10" fill="none" stroke="#8ef0c6" stroke-opacity=".25"/>
+<text x="28" y="55" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#8ef0c6" text-anchor="start" xml:space="preserve">containers</text>
+<rect x="170" y="34" width="104" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="222.0" y="54" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Kubernetes</text>
+<rect x="284.0" y="34" width="70" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="318.8" y="54" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Docker</text>
+<rect x="363.6" y="34" width="52" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="389.8" y="54" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Helm</text>
+<rect x="426.0" y="34" width="78" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="465.1" y="54" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Argo CD</text>
+<rect x="514.2" y="34" width="44" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="536.1" y="54" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">k3s</text>
+<rect x="568.0" y="34" width="130" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="632.9" y="54" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">ingress-nginx</text>
+<rect x="707.8" y="34" width="121" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="768.4" y="54" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">cert-manager</text>
+<text x="28" y="101" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#8ef0c6" text-anchor="start" xml:space="preserve">delivery</text>
+<rect x="170" y="80" width="95" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="217.7" y="100" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">GitLab CI</text>
+<rect x="275.4" y="80" width="138" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="344.59999999999997" y="100" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">GitHub Actions</text>
+<rect x="423.79999999999995" y="80" width="61" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="454.29999999999995" y="100" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Trivy</text>
+<rect x="494.79999999999995" y="80" width="70" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="529.5999999999999" y="100" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">cosign</text>
+<rect x="574.4" y="80" width="52" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="600.6" y="100" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">SBOM</text>
+<rect x="636.8" y="80" width="61" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="667.3" y="100" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Vault</text>
+<text x="28" y="147" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#8ef0c6" text-anchor="start" xml:space="preserve">iac</text>
+<rect x="170" y="126" width="95" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="217.7" y="146" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Terraform</text>
+<rect x="275.4" y="126" width="78" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="314.5" y="146" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Ansible</text>
+<rect x="363.59999999999997" y="126" width="121" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="424.19999999999993" y="146" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Yandex Cloud</text>
+<rect x="494.79999999999995" y="126" width="70" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="529.5999999999999" y="146" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">tflint</text>
+<rect x="574.4" y="126" width="113" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="630.6999999999999" y="146" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">kubeconform</text>
+<text x="28" y="193" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#8ef0c6" text-anchor="start" xml:space="preserve">observability</text>
+<rect x="170" y="172" width="104" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="222.0" y="192" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Prometheus</text>
+<rect x="284.0" y="172" width="121" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="344.6" y="192" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Alertmanager</text>
+<rect x="415.2" y="172" width="78" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="454.29999999999995" y="192" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Grafana</text>
+<rect x="503.4" y="172" width="52" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="529.6" y="192" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Loki</text>
+<rect x="565.8" y="172" width="70" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="600.5999999999999" y="192" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Zabbix</text>
+<text x="28" y="239" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#8ef0c6" text-anchor="start" xml:space="preserve">systems</text>
+<rect x="170" y="218" width="61" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="200.5" y="238" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Linux</text>
+<rect x="241.0" y="218" width="78" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="280.1" y="238" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">systemd</text>
+<rect x="329.2" y="218" width="61" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="359.7" y="238" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Nginx</text>
+<rect x="400.2" y="218" width="87" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="443.59999999999997" y="238" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">MikroTik</text>
+<rect x="497.0" y="218" width="95" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="544.7" y="238" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">WireGuard</text>
+<rect x="602.4" y="218" width="130" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="667.3" y="238" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">TrueNAS / ZFS</text>
+<text x="28" y="285" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#8ef0c6" text-anchor="start" xml:space="preserve">data</text>
+<rect x="170" y="264" width="104" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="222.0" y="284" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">PostgreSQL</text>
+<rect x="284.0" y="264" width="61" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="314.5" y="284" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Redis</text>
+<rect x="355.0" y="264" width="61" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="385.5" y="284" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Kafka</text>
+<rect x="426.0" y="264" width="35" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="443.6" y="284" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">S3</text>
+<text x="28" y="331" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#8ef0c6" text-anchor="start" xml:space="preserve">code</text>
+<rect x="170" y="310" width="52" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="196.2" y="330" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Bash</text>
+<rect x="232.4" y="310" width="70" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="267.2" y="330" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Python</text>
+<rect x="312.0" y="310" width="35" height="30" rx="5" fill="#161b22" stroke="#30363d"/>
+<text x="329.6" y="330" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#e6edf3" text-anchor="middle" xml:space="preserve">Go</text>
+</svg>

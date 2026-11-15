@@ -1,0 +1,35 @@
+name: update profile
+# Once a day: refresh the stats line and the "incident of the day" in README.md.
+on:
+  schedule:
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [scripts/**, .github/workflows/update.yml]
+
+permissions:
+  contents: write
+
+concurrency: { group: update-profile, cancel-in-progress: false }
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: { repository: Sakuratix/kubectl-why, path: kw }
+      - uses: actions/setup-go@v5
+        with: { go-version-file: kw/go.mod, cache-dependency-path: kw/go.mod }
+      - run: cd kw && go build -o kubectl-why ./cmd/kubectl-why
+      - run: python3 scripts/update.py --kubectl-why kw/kubectl-why --repo kw
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: commit if changed
+        run: |
+          git add README.md assets/incident.svg
+          git diff --cached --quiet && { echo "nothing changed"; exit 0; }
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "profile: daily refresh"
+          git push
