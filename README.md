@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/signature.svg" alt="Klim" width="100%">
+  <img src="assets/signature.svg" alt="sakuratox" width="100%">
 </p>
 
-<p align="center">I'm Klim, a DevOps engineer. I build CI/CD, run Kubernetes, write infrastructure as code and set up monitoring, so releases are boring and alerts come before complaints.</p>
+<p align="center">I'm Klim (sakuratox), a DevOps engineer. I build CI/CD, run Kubernetes, write infrastructure as code and set up monitoring, so releases are boring and alerts come before complaints.</p>
 
 <p align="center">
   <a href="https://sakuratox.is-a.dev"><img src="https://img.shields.io/badge/site-sakuratox.is--a.dev-8ef0c6?style=flat-square&labelColor=161b22" alt="site"></a>
