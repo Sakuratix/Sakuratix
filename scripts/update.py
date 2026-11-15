@@ -75,10 +75,12 @@ def metrics(now: dt.datetime) -> dict | None:
     releases = sum(len(api(f"/repos/{r['full_name']}/releases?per_page=100", token)) for r in repos)
     with_ci = green = 0
     for r in repos:
-        runs = api(f"/repos/{r['full_name']}/actions/runs?branch={r['default_branch']}&status=completed&per_page=1", token)
-        if runs.get("workflow_runs"):
+        runs = api(f"/repos/{r['full_name']}/actions/runs?branch={r['default_branch']}&status=completed&per_page=20", token)
+        # a skipped job (e.g. an optional deploy) says nothing about health: look at the newest real result
+        real = [w for w in runs.get("workflow_runs", []) if w["conclusion"] not in ("skipped", "cancelled", "neutral")]
+        if real:
             with_ci += 1
-            green += runs["workflow_runs"][0]["conclusion"] == "success"
+            green += real[0]["conclusion"] == "success"
     since = (now - dt.timedelta(days=365)).strftime("%Y-%m-%dT%H:%M:%SZ")
     q = {"query": f'{{ user(login: "{USER}") {{ contributionsCollection(from: "{since}") '
                   f"{{ contributionCalendar {{ totalContributions }} }} }} }}"}
