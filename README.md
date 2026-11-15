@@ -4,6 +4,8 @@
 
 <p align="center">I'm Klim (sakuratox), a DevOps engineer. I build CI/CD, run Kubernetes, write infrastructure as code and set up monitoring, so releases are boring and alerts come before complaints.</p>
 
+<p align="center"><img src="assets/typing.svg" alt="Kubernetes, infrastructure as code, CI/CD with signed images, SLOs, tested backups" width="100%"></p>
+
 <p align="center">
   <a href="https://sakuratox.is-a.dev"><img src="https://img.shields.io/badge/site-sakuratox.is--a.dev-8ef0c6?style=flat-square&labelColor=161b22" alt="site"></a>
   <a href="https://sakuratox.is-a.dev/cv/klimentiy-matveev-devops-en.pdf"><img src="https://img.shields.io/badge/CV-PDF-8ef0c6?style=flat-square&labelColor=161b22" alt="CV"></a>
@@ -15,6 +17,8 @@
 <!-- stats:start -->
 <p align="center"><sub>Joined GitHub this year · 16 contributions in the last 7 days</sub></p>
 <!-- stats:end -->
+
+<p align="center"><img src="assets/metrics.svg" alt="live numbers from GitHub: public repositories, contributions, releases, CI status, certifications" width="100%"></p>
 
 ## Built
 
@@ -58,9 +62,21 @@
 
 </details>
 
-## Stack
+## How I work
 
-<img src="assets/stack.svg" alt="containers: Kubernetes, Docker, Helm, Argo CD; delivery: GitLab CI, GitHub Actions, Trivy, cosign; iac: Terraform, Ansible, Yandex Cloud; observability: Prometheus, Grafana, Loki, Zabbix; systems: Linux, Nginx, MikroTik, WireGuard; data: PostgreSQL, Redis, Kafka; code: Bash, Python, Go" width="100%">
+| | principle | where you can see it |
+|---|---|---|
+| 🧪 | **Alerts are code, so they have tests.** An alert that never fired in a test will not fire at 3 a.m. either. | [infra-lab: promtool tests](https://github.com/Sakuratix/infra-lab/tree/main/monitoring/tests) |
+| 📉 | **Page on the error budget, not on noise.** Burn-rate alerts instead of fixed thresholds. | [infra-lab: SLO rules](https://github.com/Sakuratix/infra-lab/blob/main/monitoring/alerts.yml) |
+| 💾 | **A backup nobody restored is not a backup.** Restored automatically every week, RTO measured. | [pg-backup-s3: restore-check](https://github.com/Sakuratix/pg-backup-s3/blob/main/restore-check.sh) |
+| 🔁 | **Nothing is changed by hand.** The cluster is whatever git says; drift raises an alert. | [k3s-gitops](https://github.com/Sakuratix/k3s-gitops) |
+| 🔏 | **The supply chain is part of CI.** Every image scanned, described by an SBOM and signed. | [platform-ci](https://github.com/Sakuratix/platform-ci) |
+| 🔐 | **Secrets never reach git.** Guards refuse to commit them; backups are encrypted off-host. | [mikrotik-config-backup](https://github.com/Sakuratix/mikrotik-config-backup) |
+| 🩺 | **Tools should explain, not dump.** Make the 3 a.m. diagnosis someone else's 30 seconds. | [kubectl-why](https://github.com/Sakuratix/kubectl-why) |
+
+## The platform
+
+<img src="assets/system-map.svg" alt="git push to platform-ci to GHCR to k3s-gitops; Argo CD deploys infra-lab; Prometheus scrapes it and alerts through the Telegram relay; kubectl-why explains failures; pg-backup-s3 exports metrics" width="100%">
 
 ## Break my cluster
 
@@ -98,4 +114,16 @@ Every day this section picks one of the failures that [kubectl-why](https://gith
 <img src="assets/incident.svg" alt="kubectl why output: Stuck creating: a volume can't be mounted" width="100%">
 <!-- incident:end -->
 
-<p align="center"><sub>Updated daily by <a href=".github/workflows/update.yml">a GitHub Action</a> · <a href="https://sakuratox.is-a.dev">sakuratox.is-a.dev</a> · <a href="https://t.me/MountewDew">Telegram</a> · sakuratoxs@gmail.com</sub></p>
+## Stack
+
+<img src="assets/stack.svg" alt="containers: Kubernetes, Docker, Helm, Argo CD; delivery: GitLab CI, GitHub Actions, Trivy, cosign; iac: Terraform, Ansible, Yandex Cloud; observability: Prometheus, Grafana, Loki, Zabbix; systems: Linux, Nginx, MikroTik, WireGuard; data: PostgreSQL, Redis, Kafka; code: Bash, Python, Go" width="100%">
+
+---
+
+<p align="center"><b>Open to remote DevOps roles.</b> Fastest way to reach me:</p>
+<p align="center">
+  <a href="https://t.me/MountewDew"><img src="https://img.shields.io/badge/Telegram-@MountewDew-8ef0c6?style=for-the-badge&labelColor=161b22&logo=telegram&logoColor=8ef0c6" alt="Telegram"></a>
+  <a href="mailto:sakuratoxs@gmail.com"><img src="https://img.shields.io/badge/email-sakuratoxs@gmail.com-8ef0c6?style=for-the-badge&labelColor=161b22&logo=gmail&logoColor=8ef0c6" alt="email"></a>
+</p>
+
+<p align="center"><sub>Updated daily by <a href=".github/workflows/update.yml">a GitHub Action</a> · <a href="https://sakuratox.is-a.dev">sakuratox.is-a.dev</a> · numbers and the incident are refreshed by the Action, not typed by hand</sub></p>

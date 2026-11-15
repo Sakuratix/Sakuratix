@@ -58,6 +58,60 @@ def stats(now: dt.datetime) -> str | None:
     return f'<p align="center"><sub>Joined GitHub {joined} · {n} contributions in the last 7 days</sub></p>'
 
 
+def api(path: str, token: str):
+    req = urllib.request.Request("https://api.github.com" + path, headers={
+        "Authorization": f"bearer {token}", "Accept": "application/vnd.github+json"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return json.load(r)
+
+
+def metrics(now: dt.datetime) -> dict | None:
+    """Numbers for the 'at a glance' panel, all read live from GitHub."""
+    token = os.getenv("GITHUB_TOKEN")
+    if not token:
+        return None
+    repos = [r for r in api(f"/users/{USER}/repos?per_page=100&type=owner", token)
+             if not r["fork"] and not r["private"] and r["name"].lower() != USER.lower()]
+    releases = sum(len(api(f"/repos/{r['full_name']}/releases?per_page=100", token)) for r in repos)
+    with_ci = green = 0
+    for r in repos:
+        runs = api(f"/repos/{r['full_name']}/actions/runs?branch={r['default_branch']}&status=completed&per_page=1", token)
+        if runs.get("workflow_runs"):
+            with_ci += 1
+            green += runs["workflow_runs"][0]["conclusion"] == "success"
+    since = (now - dt.timedelta(days=365)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    q = {"query": f'{{ user(login: "{USER}") {{ contributionsCollection(from: "{since}") '
+                  f"{{ contributionCalendar {{ totalContributions }} }} }} }}"}
+    req = urllib.request.Request("https://api.github.com/graphql", json.dumps(q).encode(),
+                                 {"Authorization": f"bearer {token}", "Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        contrib = json.load(r)["data"]["user"]["contributionsCollection"]["contributionCalendar"]["totalContributions"]
+    return {"repos": len(repos), "releases": releases, "green": green, "with_ci": with_ci, "contrib": contrib}
+
+
+def render_metrics(m: dict, now: dt.datetime) -> None:
+    tiles = [
+        (str(m["repos"]), "public repositories"),
+        (str(m["contrib"]), "contributions, 1 year"),
+        (str(m["releases"]), "releases shipped"),
+        (f'{m["green"]}/{m["with_ci"]}', "CI green right now"),
+        ("3", "certifications"),
+    ]
+    w, h, tw = 900, 120, 168
+    mono = "ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
+    sans = "Inter,-apple-system,Segoe UI,Helvetica,Arial,sans-serif"
+    o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}">',
+         '<style>.n{opacity:0;animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}</style>']
+    for i, (num, label) in enumerate(tiles):
+        x = 6 + i * (tw + 9)
+        green = label.startswith("CI") and m["green"] == m["with_ci"]
+        o.append(f'<rect x="{x}" y="6" width="{tw}" height="{h-12}" rx="10" fill="#0d1117" stroke="#8ef0c6" stroke-opacity=".25"/>')
+        o.append(f'<g class="n" style="animation-delay:{i * .12:.2f}s"><text x="{x + tw/2}" y="62" text-anchor="middle" font-family="{sans}" font-size="34" font-weight="800" fill="{"#8ef0c6" if green or i != 3 else "#e3b341"}">{num}</text></g>')
+        o.append(f'<text x="{x + tw/2}" y="90" text-anchor="middle" font-family="{mono}" font-size="12" fill="#8b949e">{label}</text>')
+    o.append("</svg>")
+    (ROOT / "assets" / "metrics.svg").write_text("\n".join(o) + "\n")
+
+
 def shift(obj, delta):
     if isinstance(obj, dict):
         return {k: shift(v, delta) for k, v in obj.items()}
@@ -148,6 +202,12 @@ def main():
         s = None
     if s:
         text = replace_block(text, "stats", s)
+    try:
+        m = metrics(now)
+        if m:
+            render_metrics(m, now)
+    except Exception as e:
+        print(f"metrics skipped: {e}", file=sys.stderr)
     text = replace_block(text, "incident", incident(a.kubectl_why.resolve(), a.repo.resolve(), now))
     README.write_text(text)
     print("README updated")

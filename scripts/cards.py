@@ -136,3 +136,86 @@ def stack():
 
 
 stack()
+
+
+def typing():
+    """Role line that types itself, one phrase at a time (pure CSS, works in <img>)."""
+    lines = [
+        "Kubernetes · CKA · Helm · Argo CD",
+        "Infrastructure as code: Terraform, Ansible",
+        "CI/CD with scanning, SBOMs and signed images",
+        "SLOs, burn-rate alerts, tested alert rules",
+        "Backups that are restored every week",
+    ]
+    w, h, slot = 900, 44, 4.0
+    total = slot * len(lines)
+    css = [f".l{{opacity:0;animation:show {total}s infinite}}",
+           f".c{{animation:type {total}s steps(1) infinite}}"]
+    # each line: visible during its slot; a mask rect grows to type it out
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}">', "<style>"]
+    for i, l in enumerate(lines):
+        a, b = i * slot / total * 100, (i + 1) * slot / total * 100
+        tw = len(l) * 11.1 + 6
+        type_end = a + 1.6 / total * 100
+        out.append(f"@keyframes s{i}{{0%,{a:.3f}%{{opacity:0}}{a + .01:.3f}%,{b - .01:.3f}%{{opacity:1}}{b:.3f}%,100%{{opacity:0}}}}")
+        out.append(f"@keyframes m{i}{{0%,{a:.3f}%{{width:0}}{type_end:.3f}%,100%{{width:{tw:.0f}px}}}}")
+        out.append(f"@keyframes k{i}{{0%,{a:.3f}%{{transform:translateX(0)}}{type_end:.3f}%,100%{{transform:translateX({tw:.0f}px)}}}}")
+        out.append(f"#l{i}{{opacity:0;animation:s{i} {total}s linear infinite}}#m{i}{{animation:m{i} {total}s steps({len(l)}) infinite}}#k{i}{{animation:k{i} {total}s steps({len(l)}) infinite}}")
+    out.append(".blink{animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}")
+    out.append("</style>")
+    for i, l in enumerate(lines):
+        tw = len(l) * 11.1 + 6
+        x0 = (w - tw) / 2
+        out.append(f'<g id="l{i}"><clipPath id="cp{i}"><rect id="m{i}" x="{x0:.0f}" y="0" width="0" height="{h}"/></clipPath>')
+        out.append(f'<text x="{x0:.0f}" y="29" clip-path="url(#cp{i})" font-family="{MONO}" font-size="18.5" fill="{FG}" xml:space="preserve">{esc(l)}</text>')
+        out.append(f'<g id="k{i}"><rect class="blink" x="{x0 + 2:.0f}" y="12" width="10" height="22" fill="{MINT}"/></g></g>')
+    out.append("</svg>")
+    (OUT / "typing.svg").write_text("\n".join(out) + "\n")
+
+
+def system_map():
+    """How the projects fit together, as one platform."""
+    W, H = 900, 470
+    o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">',
+         f'<defs><pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="{MINT}" stroke-opacity=".06"/></pattern>'
+         f'<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="{DIM}"/></marker></defs>',
+         f'<rect width="{W}" height="{H}" rx="10" fill="{BG}"/><rect width="{W}" height="{H}" rx="10" fill="url(#g)"/>',
+         f'<rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="10" fill="none" stroke="{MINT}" stroke-opacity=".25"/>',
+         "<style>.flow{stroke-dasharray:6 6;animation:f 1.2s linear infinite}@keyframes f{to{stroke-dashoffset:-12}}</style>"]
+
+    def box(x, y, w, h, title, sub, color=MINT):
+        o.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="8" fill="#161b22" stroke="{color}" stroke-opacity=".75"/>')
+        o.append(t(x + w / 2, y + 24, esc(title), 15, FG, MONO, 700, "middle"))
+        o.append(t(x + w / 2, y + 44, esc(sub), 12, DIM, MONO, 400, "middle"))
+
+    def arrow(d, label=None, lx=0, ly=0):
+        o.append(f'<path class="flow" d="{d}" fill="none" stroke="{DIM}" stroke-width="1.6" marker-end="url(#a)"/>')
+        if label:
+            o.append(t(lx, ly, esc(label), 11, DIM, MONO, 400, "middle"))
+
+    o.append(t(30, 38, "how the pieces fit", 14, MINT))
+    box(30, 70, 170, 58, "git push", "any repo")
+    box(260, 70, 190, 58, "platform-ci", "lint · scan · SBOM · sign")
+    box(520, 70, 160, 58, "GHCR", "signed images")
+    box(720, 70, 150, 58, "k3s-gitops", "Argo CD syncs git")
+    arrow("M200 99 H254", "uses: @v1", 228, 62)
+    arrow("M450 99 H514")
+    arrow("M680 99 H714")
+    box(640, 200, 230, 58, "infra-lab", "app · Helm · SLOs", BLUE)
+    box(360, 200, 230, 58, "kube-prometheus-stack", "metrics · rules", AMBER)
+    box(80, 200, 230, 58, "telegram-relay", "alerts to the team", AMBER)
+    arrow("M795 128 V194")
+    arrow("M640 229 H596", "scrape", 618, 220)
+    arrow("M360 229 H316", "alert", 338, 220)
+    box(80, 330, 230, 58, "kubectl-why", "explains what broke", MINT)
+    box(360, 330, 230, 58, "pg-backup-s3", "age · weekly restore test", BLUE)
+    box(640, 330, 230, 58, "mikrotik-config-backup", "network configs to git", BLUE)
+    arrow("M195 258 V324", "then: kubectl why", 262, 298)
+    arrow("M475 330 V264", "metrics + rules", 540, 300)
+    o.append(t(30, 440, "How the repositories on this profile work together.", 13, DIM, SANS))
+    o.append("</svg>")
+    (OUT / "system-map.svg").write_text("\n".join(o) + "\n")
+
+
+typing()
+system_map()

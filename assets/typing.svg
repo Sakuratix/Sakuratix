@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 44" width="900" height="44">
+<style>
+@keyframes s0{0%,0.000%{opacity:0}0.010%,19.990%{opacity:1}20.000%,100%{opacity:0}}
+@keyframes m0{0%,0.000%{width:0}8.000%,100%{width:372px}}
+@keyframes k0{0%,0.000%{transform:translateX(0)}8.000%,100%{transform:translateX(372px)}}
+#l0{opacity:0;animation:s0 20.0s linear infinite}#m0{animation:m0 20.0s steps(33) infinite}#k0{animation:k0 20.0s steps(33) infinite}
+@keyframes s1{0%,20.000%{opacity:0}20.010%,39.990%{opacity:1}40.000%,100%{opacity:0}}
+@keyframes m1{0%,20.000%{width:0}28.000%,100%{width:472px}}
+@keyframes k1{0%,20.000%{transform:translateX(0)}28.000%,100%{transform:translateX(472px)}}
+#l1{opacity:0;animation:s1 20.0s linear infinite}#m1{animation:m1 20.0s steps(42) infinite}#k1{animation:k1 20.0s steps(42) infinite}
+@keyframes s2{0%,40.000%{opacity:0}40.010%,59.990%{opacity:1}60.000%,100%{opacity:0}}
+@keyframes m2{0%,40.000%{width:0}48.000%,100%{width:494px}}
+@keyframes k2{0%,40.000%{transform:translateX(0)}48.000%,100%{transform:translateX(494px)}}
+#l2{opacity:0;animation:s2 20.0s linear infinite}#m2{animation:m2 20.0s steps(44) infinite}#k2{animation:k2 20.0s steps(44) infinite}
+@keyframes s3{0%,60.000%{opacity:0}60.010%,79.990%{opacity:1}80.000%,100%{opacity:0}}
+@keyframes m3{0%,60.000%{width:0}68.000%,100%{width:472px}}
+@keyframes k3{0%,60.000%{transform:translateX(0)}68.000%,100%{transform:translateX(472px)}}
+#l3{opacity:0;animation:s3 20.0s linear infinite}#m3{animation:m3 20.0s steps(42) infinite}#k3{animation:k3 20.0s steps(42) infinite}
+@keyframes s4{0%,80.000%{opacity:0}80.010%,99.990%{opacity:1}100.000%,100%{opacity:0}}
+@keyframes m4{0%,80.000%{width:0}88.000%,100%{width:406px}}
+@keyframes k4{0%,80.000%{transform:translateX(0)}88.000%,100%{transform:translateX(406px)}}
+#l4{opacity:0;animation:s4 20.0s linear infinite}#m4{animation:m4 20.0s steps(36) infinite}#k4{animation:k4 20.0s steps(36) infinite}
+.blink{animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+</style>
+<g id="l0"><clipPath id="cp0"><rect id="m0" x="264" y="0" width="0" height="44"/></clipPath>
+<text x="264" y="29" clip-path="url(#cp0)" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18.5" fill="#e6edf3" xml:space="preserve">Kubernetes · CKA · Helm · Argo CD</text>
+<g id="k0"><rect class="blink" x="266" y="12" width="10" height="22" fill="#8ef0c6"/></g></g>
+<g id="l1"><clipPath id="cp1"><rect id="m1" x="214" y="0" width="0" height="44"/></clipPath>
+<text x="214" y="29" clip-path="url(#cp1)" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18.5" fill="#e6edf3" xml:space="preserve">Infrastructure as code: Terraform, Ansible</text>
+<g id="k1"><rect class="blink" x="216" y="12" width="10" height="22" fill="#8ef0c6"/></g></g>
+<g id="l2"><clipPath id="cp2"><rect id="m2" x="203" y="0" width="0" height="44"/></clipPath>
+<text x="203" y="29" clip-path="url(#cp2)" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18.5" fill="#e6edf3" xml:space="preserve">CI/CD with scanning, SBOMs and signed images</text>
+<g id="k2"><rect class="blink" x="205" y="12" width="10" height="22" fill="#8ef0c6"/></g></g>
+<g id="l3"><clipPath id="cp3"><rect id="m3" x="214" y="0" width="0" height="44"/></clipPath>
+<text x="214" y="29" clip-path="url(#cp3)" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18.5" fill="#e6edf3" xml:space="preserve">SLOs, burn-rate alerts, tested alert rules</text>
+<g id="k3"><rect class="blink" x="216" y="12" width="10" height="22" fill="#8ef0c6"/></g></g>
+<g id="l4"><clipPath id="cp4"><rect id="m4" x="247" y="0" width="0" height="44"/></clipPath>
+<text x="247" y="29" clip-path="url(#cp4)" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18.5" fill="#e6edf3" xml:space="preserve">Backups that are restored every week</text>
+<g id="k4"><rect class="blink" x="249" y="12" width="10" height="22" fill="#8ef0c6"/></g></g>
+</svg>

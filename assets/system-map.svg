@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470">
+<defs><pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#8ef0c6" stroke-opacity=".06"/></pattern><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8b949e"/></marker></defs>
+<rect width="900" height="470" rx="10" fill="#0d1117"/><rect width="900" height="470" rx="10" fill="url(#g)"/>
+<rect x=".5" y=".5" width="899" height="469" rx="10" fill="none" stroke="#8ef0c6" stroke-opacity=".25"/>
+<style>.flow{stroke-dasharray:6 6;animation:f 1.2s linear infinite}@keyframes f{to{stroke-dashoffset:-12}}</style>
+<text x="30" y="38" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#8ef0c6" text-anchor="start" xml:space="preserve">how the pieces fit</text>
+<rect x="30" y="70" width="170" height="58" rx="8" fill="#161b22" stroke="#8ef0c6" stroke-opacity=".75"/>
+<text x="115.0" y="94" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#e6edf3" text-anchor="middle" xml:space="preserve">git push</text>
+<text x="115.0" y="114" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">any repo</text>
+<rect x="260" y="70" width="190" height="58" rx="8" fill="#161b22" stroke="#8ef0c6" stroke-opacity=".75"/>
+<text x="355.0" y="94" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#e6edf3" text-anchor="middle" xml:space="preserve">platform-ci</text>
+<text x="355.0" y="114" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">lint · scan · SBOM · sign</text>
+<rect x="520" y="70" width="160" height="58" rx="8" fill="#161b22" stroke="#8ef0c6" stroke-opacity=".75"/>
+<text x="600.0" y="94" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#e6edf3" text-anchor="middle" xml:space="preserve">GHCR</text>
+<text x="600.0" y="114" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">signed images</text>
+<rect x="720" y="70" width="150" height="58" rx="8" fill="#161b22" stroke="#8ef0c6" stroke-opacity=".75"/>
+<text x="795.0" y="94" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#e6edf3" text-anchor="middle" xml:space="preserve">k3s-gitops</text>
+<text x="795.0" y="114" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">Argo CD syncs git</text>
+<path class="flow" d="M200 99 H254" fill="none" stroke="#8b949e" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="228" y="62" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">uses: @v1</text>
+<path class="flow" d="M450 99 H514" fill="none" stroke="#8b949e" stroke-width="1.6" marker-end="url(#a)"/>
+<path class="flow" d="M680 99 H714" fill="none" stroke="#8b949e" stroke-width="1.6" marker-end="url(#a)"/>
+<rect x="640" y="200" width="230" height="58" rx="8" fill="#161b22" stroke="#79c0ff" stroke-opacity=".75"/>
+<text x="755.0" y="224" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#e6edf3" text-anchor="middle" xml:space="preserve">infra-lab</text>
+<text x="755.0" y="244" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">app · Helm · SLOs</text>
+<rect x="360" y="200" width="230" height="58" rx="8" fill="#161b22" stroke="#e3b341" stroke-opacity=".75"/>
+<text x="475.0" y="224" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#e6edf3" text-anchor="middle" xml:space="preserve">kube-prometheus-stack</text>
+<text x="475.0" y="244" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">metrics · rules</text>
+<rect x="80" y="200" width="230" height="58" rx="8" fill="#161b22" stroke="#e3b341" stroke-opacity=".75"/>
+<text x="195.0" y="224" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#e6edf3" text-anchor="middle" xml:space="preserve">telegram-relay</text>
+<text x="195.0" y="244" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">alerts to the team</text>
+<path class="flow" d="M795 128 V194" fill="none" stroke="#8b949e" stroke-width="1.6" marker-end="url(#a)"/>
+<path class="flow" d="M640 229 H596" fill="none" stroke="#8b949e" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="618" y="220" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">scrape</text>
+<path class="flow" d="M360 229 H316" fill="none" stroke="#8b949e" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="338" y="220" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">alert</text>
+<rect x="80" y="330" width="230" height="58" rx="8" fill="#161b22" stroke="#8ef0c6" stroke-opacity=".75"/>
+<text x="195.0" y="354" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#e6edf3" text-anchor="middle" xml:space="preserve">kubectl-why</text>
+<text x="195.0" y="374" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">explains what broke</text>
+<rect x="360" y="330" width="230" height="58" rx="8" fill="#161b22" stroke="#79c0ff" stroke-opacity=".75"/>
+<text x="475.0" y="354" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#e6edf3" text-anchor="middle" xml:space="preserve">pg-backup-s3</text>
+<text x="475.0" y="374" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">age · weekly restore test</text>
+<rect x="640" y="330" width="230" height="58" rx="8" fill="#161b22" stroke="#79c0ff" stroke-opacity=".75"/>
+<text x="755.0" y="354" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#e6edf3" text-anchor="middle" xml:space="preserve">mikrotik-config-backup</text>
+<text x="755.0" y="374" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">network configs to git</text>
+<path class="flow" d="M195 258 V324" fill="none" stroke="#8b949e" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="262" y="298" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">then: kubectl why</text>
+<path class="flow" d="M475 330 V264" fill="none" stroke="#8b949e" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="540" y="300" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#8b949e" text-anchor="middle" xml:space="preserve">metrics + rules</text>
+<text x="30" y="440" font-family="Inter,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#8b949e" text-anchor="start" xml:space="preserve">How the repositories on this profile work together.</text>
+</svg>

@@ -28,7 +28,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: commit if changed
         run: |
-          git add README.md assets/incident.svg
+          git add README.md assets/incident.svg assets/metrics.svg
           git diff --cached --quiet && { echo "nothing changed"; exit 0; }
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
             commit -m "profile: daily refresh"
