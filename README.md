@@ -114,6 +114,14 @@ Every day this section picks one of the failures that [kubectl-why](https://gith
 <img src="assets/incident.svg" alt="kubectl why output: Stuck creating: a volume can't be mounted" width="100%">
 <!-- incident:end -->
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg">
+    <img src="assets/snake-light.svg" alt="the last year of contributions, eaten by a sakura-pink snake" width="100%">
+  </picture>
+  <br><sub>the contribution graph, eaten daily by <a href=".github/workflows/snake.yml">a snake</a></sub>
+</p>
+
 ## Stack
 
 <img src="assets/stack.svg" alt="containers: Kubernetes, Docker, Helm, Argo CD; delivery: GitLab CI, GitHub Actions, Trivy, cosign; iac: Terraform, Ansible, Yandex Cloud; observability: Prometheus, Grafana, Loki, Zabbix; systems: Linux, Nginx, MikroTik, WireGuard; data: PostgreSQL, Redis, Kafka; code: Bash, Python, Go" width="100%">

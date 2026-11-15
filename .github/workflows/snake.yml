@@ -1,0 +1,35 @@
+name: snake
+# Once a day: redraw the contribution graph as a snake in the profile palette
+# (mint cells, sakura-pink snake) and commit it next to the other assets.
+on:
+  schedule:
+    - cron: "41 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/snake.yml]
+
+permissions:
+  contents: write
+
+concurrency: { group: readme-writes, cancel-in-progress: false }
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-dark.svg?color_snake=#ff7eb6&color_dots=#161b22,#123d31,#1f6b52,#46b38a,#8ef0c6&color_dot_border=#0d1117
+            dist/snake-light.svg?color_snake=#e0559a&color_dots=#ebedf0,#c6f2e0,#8ee0bc,#4fb08b,#2d7a5f
+      - name: commit if changed
+        run: |
+          cp dist/snake-dark.svg dist/snake-light.svg assets/
+          git add assets/snake-dark.svg assets/snake-light.svg
+          git diff --cached --quiet && { echo "nothing changed"; exit 0; }
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "profile: redraw the snake"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 3; done
