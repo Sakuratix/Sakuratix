@@ -107,11 +107,11 @@ Pick a failure. It opens an issue; press **Create** and within a minute a bot re
 ## Incident of the day
 
 <!-- incident:start -->
-**Incident of the day, 15 November 2026:** Stuck creating: a volume can't be mounted
+**Incident of the day, 16 November 2026:** Healthy: all containers are running and Ready
 
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: A ReadWriteOnce volume is still attached to another node (often the old pod during a rollout). Use strategy Recreate or wait for the old pod to go.
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. 
 
-<img src="assets/incident.svg" alt="kubectl why output: Stuck creating: a volume can't be mounted" width="100%">
+<img src="assets/incident.svg" alt="kubectl why output: Healthy: all containers are running and Ready" width="100%">
 <!-- incident:end -->
 
 <p align="center">
