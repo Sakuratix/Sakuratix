@@ -107,11 +107,11 @@ Pick a failure. It opens an issue; press **Create** and within a minute a bot re
 ## Incident of the day
 
 <!-- incident:start -->
-**Incident of the day, 16 November 2026:** Healthy: all containers are running and Ready
+**Incident of the day, 17 November 2026:** Container never started: "gunicorn": executable file not found in $PATH
 
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. 
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: The runtime couldn't exec the entrypoint, so there are no logs. Compare command/args in the pod spec with the image: `docker inspect --format '{{.Config.Entrypoint}} {{.Config.Cmd}}' ghcr.io/acme/worker:2.1.0`.
 
-<img src="assets/incident.svg" alt="kubectl why output: Healthy: all containers are running and Ready" width="100%">
+<img src="assets/incident.svg" alt="kubectl why output: Container never started: "gunicorn": executable file not found in $PATH" width="100%">
 <!-- incident:end -->
 
 <p align="center">
