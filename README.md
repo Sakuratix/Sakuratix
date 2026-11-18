@@ -107,11 +107,11 @@ Pick a failure. It opens an issue; press **Create** and within a minute a bot re
 ## Incident of the day
 
 <!-- incident:start -->
-**Incident of the day, 17 November 2026:** Container never started: "gunicorn": executable file not found in $PATH
+**Incident of the day, 18 November 2026:** Stuck in Terminating for 38m
 
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: The runtime couldn't exec the entrypoint, so there are no logs. Compare command/args in the pod spec with the image: `docker inspect --format '{{.Config.Entrypoint}} {{.Config.Cmd}}' ghcr.io/acme/worker:2.1.0`.
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: A controller is supposed to remove these finalizers. Check that it is running before removing them by hand.
 
-<img src="assets/incident.svg" alt="kubectl why output: Container never started: "gunicorn": executable file not found in $PATH" width="100%">
+<img src="assets/incident.svg" alt="kubectl why output: Stuck in Terminating for 38m" width="100%">
 <!-- incident:end -->
 
 <p align="center">
