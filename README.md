@@ -15,7 +15,7 @@
 
 <p align="center"><sub>CKA · Terraform Associate · MTCNA · English C1</sub></p>
 <!-- stats:start -->
-<p align="center"><sub>Joined GitHub this year · 16 contributions in the last 7 days</sub></p>
+<p align="center"><sub>Joined GitHub this year · 6 contributions in the last 7 days</sub></p>
 <!-- stats:end -->
 
 <p align="center"><img src="assets/metrics.svg" alt="live numbers from GitHub: public repositories, contributions, releases, CI status, certifications" width="100%"></p>
@@ -107,11 +107,11 @@ Pick a failure. It opens an issue; press **Create** and within a minute a bot re
 ## Incident of the day
 
 <!-- incident:start -->
-**Incident of the day, 18 November 2026:** Stuck in Terminating for 38m
+**Incident of the day, 19 November 2026:** Crash loop: restarted 2 times
 
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: A controller is supposed to remove these finalizers. Check that it is running before removing them by hand.
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: The reason is in the logs of the previous run: `kubectl logs report-6b4d9-7wq2c -c report --previous`
 
-<img src="assets/incident.svg" alt="kubectl why output: Stuck in Terminating for 38m" width="100%">
+<img src="assets/incident.svg" alt="kubectl why output: Crash loop: restarted 2 times" width="100%">
 <!-- incident:end -->
 
 <p align="center">
