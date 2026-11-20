@@ -107,11 +107,11 @@ Pick a failure. It opens an issue; press **Create** and within a minute a bot re
 ## Incident of the day
 
 <!-- incident:start -->
-**Incident of the day, 19 November 2026:** Crash loop: restarted 2 times
+**Incident of the day, 20 November 2026:** Crash loop: restarted 12 times
 
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: The reason is in the logs of the previous run: `kubectl logs report-6b4d9-7wq2c -c report --previous`
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: The reason is in the logs of the previous run: `kubectl logs worker-5d8b7-q8vtl -c worker --previous`
 
-<img src="assets/incident.svg" alt="kubectl why output: Crash loop: restarted 2 times" width="100%">
+<img src="assets/incident.svg" alt="kubectl why output: Crash loop: restarted 12 times" width="100%">
 <!-- incident:end -->
 
 <p align="center">
