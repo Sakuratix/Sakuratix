@@ -15,7 +15,7 @@
 
 <p align="center"><sub>CKA · Terraform Associate · MTCNA · English C1</sub></p>
 <!-- stats:start -->
-<p align="center"><sub>Joined GitHub this year · 6 contributions in the last 7 days</sub></p>
+<p align="center"><sub>Joined GitHub this year · 4 contributions in the last 7 days</sub></p>
 <!-- stats:end -->
 
 <p align="center"><img src="assets/metrics.svg" alt="live numbers from GitHub: public repositories, contributions, releases, CI status, certifications" width="100%"></p>
@@ -107,11 +107,11 @@ Pick a failure. It opens an issue; press **Create** and within a minute a bot re
 ## Incident of the day
 
 <!-- incident:start -->
-**Incident of the day, 20 November 2026:** Crash loop: restarted 12 times
+**Incident of the day, 21 November 2026:** Pod Security Admission rejects the pod spec
 
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: The reason is in the logs of the previous run: `kubectl logs worker-5d8b7-q8vtl -c worker --previous`
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: The message lists each violation. The usual fixes for the restricted level: runAsNonRoot: true, allowPrivilegeEscalation: false, capabilities.drop: [ALL], seccompProfile.type: RuntimeDefault.
 
-<img src="assets/incident.svg" alt="kubectl why output: Crash loop: restarted 12 times" width="100%">
+<img src="assets/incident.svg" alt="kubectl why output: Pod Security Admission rejects the pod spec" width="100%">
 <!-- incident:end -->
 
 <p align="center">
