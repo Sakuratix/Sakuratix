@@ -107,11 +107,11 @@ Pick a failure. It opens an issue; press **Create** and within a minute a bot re
 ## Incident of the day
 
 <!-- incident:start -->
-**Incident of the day, 21 November 2026:** Pod Security Admission rejects the pod spec
+**Incident of the day, 22 November 2026:** Rollout is stuck (progressDeadlineSeconds exceeded)
 
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: The message lists each violation. The usual fixes for the restricted level: runAsNonRoot: true, allowPrivilegeEscalation: false, capabilities.drop: [ALL], seccompProfile.type: RuntimeDefault.
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: New pods never became Ready, see below. Fix them or roll back: `kubectl rollout undo deployment/api`.
 
-<img src="assets/incident.svg" alt="kubectl why output: Pod Security Admission rejects the pod spec" width="100%">
+<img src="assets/incident.svg" alt="kubectl why output: Rollout is stuck (progressDeadlineSeconds exceeded)" width="100%">
 <!-- incident:end -->
 
 <p align="center">
