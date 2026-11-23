@@ -15,7 +15,7 @@
 
 <p align="center"><sub>CKA · Terraform Associate · MTCNA · English C1</sub></p>
 <!-- stats:start -->
-<p align="center"><sub>Joined GitHub this year · 4 contributions in the last 7 days</sub></p>
+<p align="center"><sub>Joined GitHub this year · 0 contributions in the last 7 days</sub></p>
 <!-- stats:end -->
 
 <p align="center"><img src="assets/metrics.svg" alt="live numbers from GitHub: public repositories, contributions, releases, CI status, certifications" width="100%"></p>
@@ -107,11 +107,11 @@ Pick a failure. It opens an issue; press **Create** and within a minute a bot re
 ## Incident of the day
 
 <!-- incident:start -->
-**Incident of the day, 22 November 2026:** Rollout is stuck (progressDeadlineSeconds exceeded)
+**Incident of the day, 23 November 2026:** Evicted by the kubelet
 
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: New pods never became Ready, see below. Fix them or roll back: `kubectl rollout undo deployment/api`.
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: The node ran low on a resource (usually memory or ephemeral disk) and picked this pod to free it.
 
-<img src="assets/incident.svg" alt="kubectl why output: Rollout is stuck (progressDeadlineSeconds exceeded)" width="100%">
+<img src="assets/incident.svg" alt="kubectl why output: Evicted by the kubelet" width="100%">
 <!-- incident:end -->
 
 <p align="center">
