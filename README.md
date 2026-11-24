@@ -107,11 +107,11 @@ Pick a failure. It opens an issue; press **Create** and within a minute a bot re
 ## Incident of the day
 
 <!-- incident:start -->
-**Incident of the day, 23 November 2026:** Evicted by the kubelet
+**Incident of the day, 24 November 2026:** Wrong CPU architecture: the image can't run on this node
 
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: The node ran low on a resource (usually memory or ephemeral disk) and picked this pod to free it.
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: See which platforms the image has: `docker buildx imagetools inspect ghcr.io/acme/worker:2.1.0`.
 
-<img src="assets/incident.svg" alt="kubectl why output: Evicted by the kubelet" width="100%">
+<img src="assets/incident.svg" alt="kubectl why output: Wrong CPU architecture: the image can't run on this node" width="100%">
 <!-- incident:end -->
 
 <p align="center">
