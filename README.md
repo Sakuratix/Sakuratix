@@ -107,11 +107,11 @@ Pick a failure. It opens an issue; press **Create** and within a minute a bot re
 ## Incident of the day
 
 <!-- incident:start -->
-**Incident of the day, 24 November 2026:** Wrong CPU architecture: the image can't run on this node
+**Incident of the day, 25 November 2026:** Stuck creating: a volume can't be mounted
 
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: See which platforms the image has: `docker buildx imagetools inspect ghcr.io/acme/worker:2.1.0`.
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: A ReadWriteOnce volume is still attached to another node (often the old pod during a rollout). Use strategy Recreate or wait for the old pod to go.
 
-<img src="assets/incident.svg" alt="kubectl why output: Wrong CPU architecture: the image can't run on this node" width="100%">
+<img src="assets/incident.svg" alt="kubectl why output: Stuck creating: a volume can't be mounted" width="100%">
 <!-- incident:end -->
 
 <p align="center">
