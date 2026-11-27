@@ -107,11 +107,11 @@ Pick a failure. It opens an issue; press **Create** and within a minute a bot re
 ## Incident of the day
 
 <!-- incident:start -->
-**Incident of the day, 26 November 2026:** Healthy: all containers are running and Ready
+**Incident of the day, 27 November 2026:** Image or tag doesn't exist: ghcr.io/acme/api:1.9.0
 
-Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. 
+Every day this section picks one of the failures that [kubectl-why](https://github.com/Sakuratix/kubectl-why) recognises, replays the recorded cluster state with today's clock and lets the tool explain it. Today's fix: Check the tag was actually pushed (typo, CI didn't publish, or it was built for another architecture).
 
-<img src="assets/incident.svg" alt="kubectl why output: Healthy: all containers are running and Ready" width="100%">
+<img src="assets/incident.svg" alt="kubectl why output: Image or tag doesn't exist: ghcr.io/acme/api:1.9.0" width="100%">
 <!-- incident:end -->
 
 <p align="center">
